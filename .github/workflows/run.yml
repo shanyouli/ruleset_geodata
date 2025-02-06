@@ -237,7 +237,8 @@ jobs:
         run: |
           mkdir -p ./sing-box-ruleset/
           cd ./tools/
-          sed -i 's/"version": 1/"version": 3/' ./convert.sh
+          # singboxp 核版本不支持 version3，
+          # sed -i 's/"version": 1/"version": 3/' ./convert.sh
           chmod +x ./convert.sh && ./convert.sh
           rm -rf ./sing-box* ./rules*
           mv -f ./*.json ./*.srs ../sing-box-ruleset/
